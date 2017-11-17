@@ -1,9 +1,14 @@
 // new
-ion-img {
+ion-img.img-logotype {
+  display: block;
+  border-radius: 0;
+  
   &.img-loaded {
     background-color: #ffffff;
   
-    img.img-logotype {
+    img {
+      border-radius: 0;
+      display: block;
       height: 75px;
       margin: {
         left: auto;

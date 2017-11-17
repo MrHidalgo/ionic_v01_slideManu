@@ -16,7 +16,7 @@ import { ContactsPage } from "../pages/contacts/contacts";
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = ProfilePage;
+  rootPage: any = TasksPage;
 
   pages: Array<{title: string, component: any}>;
 
