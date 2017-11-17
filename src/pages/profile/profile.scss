@@ -1,0 +1,16 @@
+ion-img {
+  display: block;
+  border-radius: 50%;
+  margin: {
+    left: auto;
+    right: auto;
+  };
+  
+  &.img-loaded {
+    background-color: #ffffff;
+    
+    img {
+      border-radius: 50%;
+    }
+  }
+}

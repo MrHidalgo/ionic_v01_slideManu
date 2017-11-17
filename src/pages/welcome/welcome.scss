@@ -1,0 +1,16 @@
+// new
+ion-img {
+  &.img-loaded {
+    background-color: #ffffff;
+  
+    img.img-logotype {
+      height: 75px;
+      margin: {
+        left: auto;
+        right: auto;
+      };
+    }
+  }
+}
+
+

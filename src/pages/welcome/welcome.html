@@ -1,0 +1,21 @@
+<ion-content padding>
+  
+  <ion-row>
+  
+    <ion-item-divider></ion-item-divider>
+    
+    <ion-img style="width: 100%; height: 75px;" class="img-logotype" src="/assets/imgs/logotype.png"></ion-img>
+  
+    <ion-item-divider></ion-item-divider>
+    
+    <button
+      ion-button full
+      *ngFor="let page of pages"
+      (click)="openPage(page)"
+    >
+      {{ page.title }}
+    </button>
+    
+  </ion-row>
+  
+</ion-content>
