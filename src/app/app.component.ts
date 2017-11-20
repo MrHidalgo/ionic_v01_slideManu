@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform, LoadingController  } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -23,7 +23,8 @@ export class MyApp {
   constructor(
     public platform: Platform,
     public statusBar: StatusBar,
-    public splashScreen: SplashScreen
+    public splashScreen: SplashScreen,
+    public loadingCtrl: LoadingController
   ) {
     this.initializeApp();
 
@@ -51,5 +52,16 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
+  }
+  
+  signOut() {
+    let loader = this.loadingCtrl.create({
+      content: "Thank you for using the application",
+      duration: 1500
+    }).present();
+  
+    setTimeout(() => {
+      this.nav.setRoot(WelcomePage);
+    }, 1500);
   }
 }
