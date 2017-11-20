@@ -7,60 +7,49 @@
     
     <ion-title>Tasks</ion-title>
   
-    <ion-buttons end>
-      <button  ion-button icon-only #button2>
-        <ion-icon name="search"></ion-icon>
-      </button>
-    </ion-buttons>
+    <!--<ion-buttons end>-->
+      <!--<button  ion-button icon-only #button2>-->
+        <!--<ion-icon name="search"></ion-icon>-->
+      <!--</button>-->
+    <!--</ion-buttons>-->
     
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
   
   <ion-list>
-    <ion-item-sliding>
-      <ion-item>
+    <ion-item-sliding *ngFor="let content of tasks">
+      <ion-item (click)="goToDetails(content)">
         <ion-avatar item-start>
-          <img src="https://2.bp.blogspot.com/-7S5map7lvcg/WP8GGNXGeaI/AAAAAAAABcs/peVfQ8MG6CMEGIJJJx3InpfbI21JJk45wCLcB/s1600/darth-vader.jpg">
+          <img src={{content.imgPath}}>
         </ion-avatar>
-        <h2>Finn</h2>
-        <h3>Don't Know What To Do!</h3>
-        <p>I've had a pretty messed up day. If we just...</p>
+        
+        <h2>{{content.title}}</h2>
+        <h3>{{content.subTitle}}</h3>
+        <p>{{content.description}}</p>
+      
         <button ion-button clear item-end>View</button>
       </ion-item>
+      
       <ion-item-options side="right">
         <button ion-button color="primary">
-          <ion-icon name="text"></ion-icon>
-          Func
+          <ion-icon name="create"></ion-icon>
+          Func 1
         </button>
         <button ion-button color="secondary">
-          <ion-icon name="call"></ion-icon>
-          Func
-        </button>
-      </ion-item-options>
-    </ion-item-sliding>
-    <ion-item-sliding>
-      <ion-item>
-        <ion-avatar item-start>
-          <img src="https://2.bp.blogspot.com/-7S5map7lvcg/WP8GGNXGeaI/AAAAAAAABcs/peVfQ8MG6CMEGIJJJx3InpfbI21JJk45wCLcB/s1600/darth-vader.jpg">
-        </ion-avatar>
-        <h2>Finn</h2>
-        <h3>Don't Know What To Do!</h3>
-        <p>I've had a pretty messed up day. If we just...</p>
-        <button ion-button clear item-end>View</button>
-      </ion-item>
-      <ion-item-options side="right">
-        <button ion-button color="primary">
-          <ion-icon name="text"></ion-icon>
-          Func
-        </button>
-        <button ion-button color="secondary">
-          <ion-icon name="call"></ion-icon>
-          Func
+          <ion-icon name="create"></ion-icon>
+          Func 2
         </button>
       </ion-item-options>
     </ion-item-sliding>
   </ion-list>
+  
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" threshold="50%">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 
 </ion-content>

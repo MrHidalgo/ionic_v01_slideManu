@@ -9,10 +9,13 @@ import { WelcomePage } from '../pages/welcome/welcome';
 import { SignIn } from '../pages/signin/signin';
 import { SignUp } from "../pages/signup/signup";
 import { TasksPage } from "../pages/tasks/tasks";
+import { TasksDescription } from "../pages/tasksDescription/tasksDescription";
 import { HoursPage } from "../pages/hours/hours";
 import { ProfilePage } from "../pages/profile/profile";
 import { SettingPage } from "../pages/setting/setting";
 import { ContactsPage } from "../pages/contacts/contacts";
+
+import { DataTaskListProvider } from "../pages/tasks/data";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -25,6 +28,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SignIn,
     SignUp,
     TasksPage,
+    TasksDescription,
     HoursPage,
     ProfilePage,
     SettingPage,
@@ -42,6 +46,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SignIn,
     SignUp,
     TasksPage,
+    TasksDescription,
     HoursPage,
     ProfilePage,
     SettingPage,
@@ -50,7 +55,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    DataTaskListProvider,
+    {
+      provide: ErrorHandler,
+      useClass: IonicErrorHandler
+    }
   ]
 })
 export class AppModule {}
