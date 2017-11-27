@@ -30,3 +30,13 @@
     right: 0;
   };
 }
+
+/*
+  Validation field
+*/
+.item-block.ng-touched.ng-invalid > .item-inner {
+  border-bottom: 1px solid #f53d3d;
+}
+.item-block.ng-touched.ng-valid > .item-inner {
+  border-bottom: 1px solid #32db64;
+}

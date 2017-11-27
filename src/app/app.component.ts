@@ -10,13 +10,16 @@ import { ProfilePage } from "../pages/profile/profile";
 import { SettingPage } from "../pages/setting/setting";
 import { ContactsPage } from "../pages/contacts/contacts";
 
+import { SignIn } from "../pages/signin/signin";
+import { SignUp } from "../pages/signup/signup";
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = WelcomePage;
+  rootPage: any = WelcomePage ;
 
   pages: Array<{title: string, component: any}>;
 

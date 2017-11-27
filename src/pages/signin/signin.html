@@ -16,33 +16,40 @@
   
   <ion-item-divider></ion-item-divider>
   
-  <ion-list>
-    
+  <form
+    [formGroup]="signInForm"
+    novalidate
+    (ngSubmit)="login()"
+    autocomplete="off"
+  >
+  
     <ion-item>
       <ion-input
         type="text"
         placeholder="Your email"
-        clearInput
+        formControlName="userEmail"
       ></ion-input>
     </ion-item>
-    
+  
     <ion-item>
       <ion-input
         type="password"
         placeholder="Your password"
-        clearInput
-        min=8
+        formControlName="userPassword"
       ></ion-input>
     </ion-item>
-    
-  </ion-list>
   
-  <button
-    ion-button full
-    color="primary"
-    (click)="goToHomePage()"
-  >
-    Sign In
-  </button>
+    <button
+      type="submit"
+      ion-button
+      full
+      color="primary"
+      [disabled]="!signInForm.valid"
+    >
+      Sign In
+    </button>
+  
+  </form>
+  
 
 </ion-content>
